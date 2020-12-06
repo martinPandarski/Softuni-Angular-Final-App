@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "final-angular-app"
+  "defaultProject": "final-angular-app",
+  "cli": {
+    "analytics": false
+  }
 }
