@@ -2,7 +2,10 @@ import {Component, OnInit} from '@angular/core';
 import {animate, state, style, transition, trigger} from '@angular/animations';
 import {UserService} from '../../user/user.service';
 import {DashboardService} from '../dashboard.service';
-import {IPlan} from '../../shared/interfaces/interfaces'
+import {IPlan} from '../../shared/interfaces/interfaces';
+import {MatDialog} from '@angular/material/dialog'
+import { NewPlanComponent } from '../new-plan/new-plan.component';
+
 
 @Component({
   selector: 'table-expandable-rows-example',
@@ -28,12 +31,16 @@ export class DashboardComponent implements OnInit{
   ngOnInit():void{
     this.dashboardService.loadPlanList().subscribe(planList =>{
       this.dataSource = planList;
-      console.log(this.dataSource)
+  
     })
     
   }
- // dataSource = this.ELEMENT_DATA;
+
+   
+  
 }
+ // dataSource = this.ELEMENT_DATA;
+
 
 // export interface PeriodicElement {
 //   Title: string;

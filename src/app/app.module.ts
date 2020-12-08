@@ -13,6 +13,7 @@ import { LoginComponent } from './user/login/login.component';
 import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
+import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { DashboardModule } from './dashboard/dashboard.module';
     DashboardModule
   ],
   providers: [],
+
   bootstrap: [AppComponent]
 })
 export class AppModule { }

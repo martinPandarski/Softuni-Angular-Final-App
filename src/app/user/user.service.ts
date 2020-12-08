@@ -24,9 +24,8 @@ export class UserService {
   // }
 
   login(data: any): Observable<any> {
-    console.log(data)
     return this.http.post(`${apiUrl}/users/login`, data).pipe(
-      tap((user: IUser) => this.currentUser = user)
+      tap((user: IUser) => this.currentUser = user),
     );
   }
 
@@ -34,6 +33,7 @@ export class UserService {
     return this.http.post(`${apiUrl}/users/register`, data).pipe(
       tap((user: IUser) => this.currentUser = user)
     );
+    
   }
 
   logout(): Observable<any> {

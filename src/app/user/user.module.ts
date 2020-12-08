@@ -16,7 +16,7 @@ import { UserService } from './user.service';
     CommonModule,
     FormsModule,
     MaterialModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
   ],
   providers:[UserService]
 })

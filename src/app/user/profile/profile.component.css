@@ -1,0 +1,23 @@
+.example-card {
+    max-width: 400px;
+    padding-left: 550px;
+    padding-right: 550px;
+  }
+  
+  .example-header-image {
+    background-image: url('https://www.clipartmax.com/png/middle/171-1717870_stockvader-predicted-cron-for-may-user-profile-icon-png.png');
+    background-size: cover;
+  }
+  .example-headers-align .mat-expansion-panel-header-title,
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.example-headers-align .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

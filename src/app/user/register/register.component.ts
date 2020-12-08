@@ -32,9 +32,11 @@ export class RegisterComponent implements OnInit {
     const data = this.registerForm.value;
     // this.isLoading = true;
 
+
     this.userService.register(data).subscribe({
       next: () => {
         // this.isLoading = false;
+        
         this.router.navigate(['/']);
       },
       error: (err) => {

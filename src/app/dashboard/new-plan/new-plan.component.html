@@ -1,0 +1,39 @@
+<form class="example-form" #f="ngForm" (ngSubmit)="submit(f.value)" >
+    <mat-form-field class="example-full-width">
+      <mat-label>Post your fitness plan below!</mat-label>
+      <input matInput disabled value="Post your fitness plan below!">
+    </mat-form-field>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Plan Name</mat-label>
+        <input matInput required ngModel name="title">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Category</mat-label>
+        <input matInput required ngModel name="category">
+      </mat-form-field></td>
+    </tr></table>
+  
+    <p>
+      <mat-form-field class="example-full-width">
+        <mat-label>Description</mat-label>
+        <textarea matInput required ngModel name="description" placeholder="Type the description of your plan here."></textarea>
+      </mat-form-field>
+    </p>
+  
+    <table class="example-full-width" cellspacing="0"><tr>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Difficulty</mat-label>
+        <input matInput required ngModel name="difficulty" placeholder="Ex. Intermediate, Pro, Beginner">
+      </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Duration in weeks</mat-label>
+        <input matInput required ngModel name="duration" placeholder="Ex. 2 weeks">
+      </mat-form-field></td>
+    </tr></table>
+    
+    <button mat-raised-button color="primary">Submit</button>
+    <button mat-raised-button color="primary" routerLink="/dashboard">Cancel</button>
+
+  </form>

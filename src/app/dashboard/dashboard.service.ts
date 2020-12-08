@@ -19,8 +19,8 @@ export class DashboardService {
   //   return this.http.get<IPlan<IPost>>(`${apiUrl}/themes/${id}`, { withCredentials: true });
   // }
 
-  // saveTheme(data: any): Observable<IPlan<any>> {
-  //   return this.http.post<IPlan<any>>(`${apiUrl}/themes`, data, { withCredentials: true });
-  // }
+  savePlan(data: any): Observable<IPlan<any>> {
+    return this.http.post<IPlan<any>>(`${apiUrl}/data/plans`, data);
+  }
 
 }

@@ -1,9 +1,9 @@
-  <br>
-    <div class="container" >
+  <br >
+    <div class="container">
         <div class="container">
           <div fxLayout="column" fxLayoutGap="20px" fxLayout.gt-md="row"  fxLayoutAlign="space-around center" class="content">
               <div class="blocks">
-                  <button *ngIf="isLogged" button="submit" mat-raised-button color="primary">
+                  <button *ngIf="isLogged" routerLink="/dashboard/new" button="submit" mat-raised-button color="primary" >
                       <mat-icon>add</mat-icon> Add Post
                   </button>
               </div>
@@ -11,7 +11,7 @@
     </div>
     <br>
 
-<table mat-table
+<table mat-table 
        [dataSource]="dataSource" multiTemplateDataRows
        class="mat-elevation-z8">
   <ng-container matColumnDef="{{column}}" *ngFor="let column of columnsToDisplay">
@@ -29,14 +29,18 @@
           <div class="example-element-symbol"> {{element.category}} </div>
           <div class="example-element-name"> {{element.duration}} </div>
           <div class="example-element-weight"> {{element.difficulty}} </div>
+         
         </div>
         <div class="example-element-description">
           <span class="example-element-description-attribution"> {{element.description}} </span>
         </div>
       </div>
+      
     </td>
   </ng-container>
-
+ 
+  
+ 
   <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
   <tr mat-row *matRowDef="let element; columns: columnsToDisplay;"
       class="example-element-row"

@@ -5,6 +5,7 @@ import {DashboardComponent} from './dashboard/dashboard/dashboard.component'
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { ProfileComponent } from './user/profile/profile.component';
+import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
 
 const routes: Routes = [
   {
@@ -32,6 +33,10 @@ const routes: Routes = [
   {
     path: 'profile',
     component: ProfileComponent
+  },
+  {
+    path: 'dashboard/new',
+    component: NewPlanComponent
   }
 ];
 
