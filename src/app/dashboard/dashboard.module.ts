@@ -8,6 +8,7 @@ import { RouterModule } from '@angular/router';
 import { MatFormField } from '@angular/material/form-field';
 import { FormsModule } from '@angular/forms';
 import { MatDialog } from '@angular/material/dialog';
+import { DashboardRouterModule } from './dashboard-routing.module';
 
 
 
@@ -18,6 +19,7 @@ import { MatDialog } from '@angular/material/dialog';
     MaterialModule, 
     RouterModule,
     FormsModule,
+    DashboardRouterModule
     
   ],
   providers: [DashboardService],

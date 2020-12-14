@@ -10,19 +10,21 @@ const apiUrl = environment.apiUrl;
 @Injectable()
 export class UserService {
 
+  
+
   currentUser: IUser | null;
 
   get isLogged(): boolean { return !!this.currentUser; }
 
   constructor(private http: HttpClient) { }
 
-  // getCurrentUserProfile(): Observable<any> {
-  //   return this.http.get(`${apiUrl}/users/profile`, { withCredentials: true }).pipe(
-  //     tap(((user: IUser) => this.currentUser = user)),
-  //     catchError(() => { this.currentUser = null; return of(null); })
-  //   );
-  // }
-
+  getCurrentUserProfile(): Observable<any> {
+    return this.http.get(`${apiUrl}/users/${this.currentUser.ownerId}`).pipe(
+      tap(((user: IUser) => this.currentUser = user)),
+      catchError(() => { this.currentUser = null; return of(null); })
+    );
+  }
+  
   login(data: any): Observable<any> {
     return this.http.post(`${apiUrl}/users/login`, data).pipe(
       tap((user: IUser) => this.currentUser = user),
@@ -41,10 +43,11 @@ export class UserService {
       tap(() => this.currentUser = null)
     );
   }
-
-  // updateProfile(data: any): Observable<IUser> {
-  //   return this.http.put(`${apiUrl}/users/profile`, data).pipe(
-  //     tap((user: IUser) => this.currentUser = user)
-  //   );
-  // }
+  
+  updateProfile(data: any): Observable<IUser> {
+    
+    return this.http.put(`${apiUrl}/users/${this.currentUser.ownerId}`, data).pipe(
+      tap((user: IUser) => this.currentUser = user)
+    );
+  }
 }

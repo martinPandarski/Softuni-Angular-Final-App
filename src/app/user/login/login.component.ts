@@ -33,7 +33,7 @@ export class LoginComponent implements OnInit {
     this.userService.login(formValue).subscribe({
       next: (data) => {
         // this.isLoading = false;
-        console.log(this.userService.currentUser)
+        console.log(this.userService.currentUser.ownerId)
         this.router.navigate(['/']);
       },
       error: (err) => {

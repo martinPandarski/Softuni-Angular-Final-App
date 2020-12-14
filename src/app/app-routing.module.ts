@@ -1,47 +1,42 @@
-import { NgModule } from '@angular/core';
+
 import { Routes, RouterModule } from '@angular/router';
 import {WelcomeComponent} from './welcome/welcome.component';
-import {DashboardComponent} from './dashboard/dashboard/dashboard.component'
-import { RegisterComponent } from './user/register/register.component';
-import { LoginComponent } from './user/login/login.component';
-import { ProfileComponent } from './user/profile/profile.component';
-import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
+
+import { AuthGuard } from './core/guards/auth.guard';
+import { NotFoundComponent } from './shared/not-found/not-found/not-found.component';
 
 const routes: Routes = [
   {
     path: '',
-    component: WelcomeComponent,
-    data: {
-      title: 'Home'
-    }
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent,
-    data:{
-      title: 'Plans Dashboard'
-    }
-  },
-  {
-    path: 'register',
-    component: RegisterComponent
-  },
-  {
-    path: 'login',
-    component: LoginComponent
-  },
-  {
-    path: 'profile',
-    component: ProfileComponent
-  },
-  {
-    path: 'dashboard/new',
-    component: NewPlanComponent
+    
+    children:[
+      {
+        path: '',
+        component: WelcomeComponent,
+        data: {
+          title: 'Home'
+        }
+      },
+      {
+        path: 'profile',
+        
+        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
+      },
+      {
+        path: 'dashboard',
+       
+        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
+      },
+      {
+        path: '**',
+        component: NotFoundComponent,
+        data:{
+          title: '404'
+        }
+      }
+    ]
+ 
   }
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const AppRoutingModule = RouterModule.forRoot(routes);

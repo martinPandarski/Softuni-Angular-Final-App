@@ -10,7 +10,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
-import { MatAccordion } from '@angular/material/expansion';
+import {MatProgressBarModule} from '@angular/material/progress-bar'
+
 
 
 
@@ -26,6 +27,7 @@ import { MatAccordion } from '@angular/material/expansion';
     MatCardModule,
     MatTableModule,
     MatSelectModule,
+    MatProgressBarModule
     
     
   ],
@@ -40,6 +42,7 @@ import { MatAccordion } from '@angular/material/expansion';
     MatTableModule,
     MatCardModule,
     MatSelectModule,
+    MatProgressBarModule
     
     
   ]

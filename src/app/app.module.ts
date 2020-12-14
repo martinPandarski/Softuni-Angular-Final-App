@@ -14,6 +14,7 @@ import { UserModule } from './user/user.module';
 import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
+import { SharedModule } from './shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
     ReactiveFormsModule,
     UserModule,
     HttpClientModule,
-    DashboardModule
+    DashboardModule,
+    SharedModule
   ],
   providers: [],
 

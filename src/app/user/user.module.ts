@@ -7,6 +7,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
 import { AppModule } from '../app.module';
 import { UserService } from './user.service';
+import { UserRoutingModule } from './user-routing.module';
 
 
 
@@ -17,6 +18,7 @@ import { UserService } from './user.service';
     FormsModule,
     MaterialModule,
     ReactiveFormsModule,
+    UserRoutingModule
   ],
   providers:[UserService]
 })
