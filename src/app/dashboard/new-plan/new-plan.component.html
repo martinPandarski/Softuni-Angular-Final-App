@@ -31,8 +31,12 @@
         <mat-label>Duration in weeks</mat-label>
         <input matInput required ngModel name="duration" placeholder="Ex. 2 weeks">
       </mat-form-field></td>
+      <td><mat-form-field class="example-full-width">
+        <mat-label>Training sessions per week</mat-label>
+        <input matInput required ngModel name="timesPerWeek" placeholder="Ex. 2">
+      </mat-form-field></td>
     </tr></table>
-    
+  
     <button mat-raised-button color="primary">Submit</button>
     
     <button mat-raised-button color="primary" routerLink="/dashboard">Cancel</button>

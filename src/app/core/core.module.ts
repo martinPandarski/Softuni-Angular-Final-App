@@ -4,6 +4,7 @@ import { MaterialModule } from '../material.module';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { AuthGuard } from './guards/auth.guard';
 import { RouterModule } from '@angular/router';
+import { storageServiceProvider } from './storage.service';
 
 
 
@@ -15,9 +16,9 @@ import { RouterModule } from '@angular/router';
     FlexLayoutModule,
     RouterModule
   ],
-  providers:[AuthGuard],
+  providers:[AuthGuard, storageServiceProvider],
   exports:[
-    
+    AuthGuard
   ]
 })
 export class CoreModule { }

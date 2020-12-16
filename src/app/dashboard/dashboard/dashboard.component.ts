@@ -27,9 +27,12 @@ export class DashboardComponent implements OnInit{
   get isLogged(): boolean {
     return this.userService.isLogged;
   }
+
+  
   
   ngOnInit():void{
     this.dashboardService.loadPlanList().subscribe(planList =>{
+      console.log(planList)
       this.dataSource = planList;
   
     })
@@ -39,14 +42,4 @@ export class DashboardComponent implements OnInit{
    
   
 }
- // dataSource = this.ELEMENT_DATA;
-
-
-// export interface PeriodicElement {
-//   Title: string;
-//   Category: number;
-//   Duration: string;
-//   Difficulty: string;
-//   description: string;
-// }
-
+ 

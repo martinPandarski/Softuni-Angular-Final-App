@@ -8,7 +8,7 @@ import { NotFoundComponent } from './shared/not-found/not-found/not-found.compon
 const routes: Routes = [
   {
     path: '',
-    
+    canActivateChild:[AuthGuard],
     children:[
       {
         path: '',
@@ -18,20 +18,21 @@ const routes: Routes = [
         }
       },
       {
-        path: 'profile',
-        
+        path: 'user',
+        canActivateChild: [AuthGuard],
         loadChildren: () => import('./user/user.module').then(m => m.UserModule)
       },
       {
         path: 'dashboard',
-       
+        canActivateChild:[AuthGuard],
         loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
         path: '**',
         component: NotFoundComponent,
         data:{
-          title: '404'
+          title: '404',
+          
         }
       }
     ]

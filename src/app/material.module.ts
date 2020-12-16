@@ -10,7 +10,8 @@ import {MatCardModule} from '@angular/material/card';
 import {MatTableModule} from '@angular/material/table';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatSelectModule } from '@angular/material/select';
-import {MatProgressBarModule} from '@angular/material/progress-bar'
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatTabsModule} from '@angular/material/tabs';
 
 
 
@@ -27,7 +28,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     MatCardModule,
     MatTableModule,
     MatSelectModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule
     
     
   ],
@@ -42,7 +44,8 @@ import {MatProgressBarModule} from '@angular/material/progress-bar'
     MatTableModule,
     MatCardModule,
     MatSelectModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    MatTabsModule
     
     
   ]

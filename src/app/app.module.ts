@@ -15,14 +15,13 @@ import { HttpClientModule } from '@angular/common/http';
 import { DashboardModule } from './dashboard/dashboard.module';
 import { NewPlanComponent } from './dashboard/new-plan/new-plan.component';
 import { SharedModule } from './shared/shared.module';
+import { AuthGuard } from './core/guards/auth.guard';
 
 @NgModule({
   declarations: [
     AppComponent,
     WelcomeComponent,
-    // DashboardComponent,
-    // RegisterComponent,
-    // LoginComponent
+
   ],
   imports: [
     BrowserModule,
@@ -36,7 +35,7 @@ import { SharedModule } from './shared/shared.module';
     DashboardModule,
     SharedModule
   ],
-  providers: [],
+  providers: [AuthGuard],
 
   bootstrap: [AppComponent]
 })
