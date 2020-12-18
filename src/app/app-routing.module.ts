@@ -5,6 +5,7 @@ import {WelcomeComponent} from './welcome/welcome.component';
 import { AuthGuard } from './core/guards/auth.guard';
 import { NotFoundComponent } from './shared/not-found/not-found/not-found.component';
 
+
 const routes: Routes = [
   {
     path: '',
@@ -12,20 +13,15 @@ const routes: Routes = [
     children:[
       {
         path: '',
+        pathMatch: 'full',
+        redirectTo: '/home'
+      },
+      {
+        path: 'home',
         component: WelcomeComponent,
         data: {
           title: 'Home'
         }
-      },
-      {
-        path: 'user',
-        canActivateChild: [AuthGuard],
-        loadChildren: () => import('./user/user.module').then(m => m.UserModule)
-      },
-      {
-        path: 'dashboard',
-        canActivateChild:[AuthGuard],
-        loadChildren: () => import('./dashboard/dashboard.module').then(m => m.DashboardModule)
       },
       {
         path: '**',
@@ -39,5 +35,6 @@ const routes: Routes = [
  
   }
 ];
+
 
 export const AppRoutingModule = RouterModule.forRoot(routes);

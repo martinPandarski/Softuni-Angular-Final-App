@@ -17,7 +17,7 @@ export class DashboardService {
 
 
   savePlan(data: any): Observable<IPlan<any>> {
-    return this.http.post<IPlan<any>>(`${apiUrl}/data/plans`, data,);
+    return this.http.post<IPlan<any>>(`${apiUrl}/data/plans`, data);
   }
 
 }

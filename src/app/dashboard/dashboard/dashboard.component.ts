@@ -26,13 +26,10 @@ export class DashboardComponent implements OnInit{
   constructor(private userService: UserService, private dashboardService: DashboardService){}
   get isLogged(): boolean {
     return this.userService.isLogged;
-  }
-
-  
-  
+  }  
   ngOnInit():void{
     this.dashboardService.loadPlanList().subscribe(planList =>{
-      console.log(planList)
+
       this.dataSource = planList;
   
     })

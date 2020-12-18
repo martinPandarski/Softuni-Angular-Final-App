@@ -13,10 +13,6 @@ export class AuthGuard implements CanActivateChild {
   ) { }
   canActivateChild(childRoute: ActivatedRouteSnapshot, state: RouterStateSnapshot): Observable<boolean> {
     let stream$: Observable<IUser | null>;
-    // if (this.userService.currentUser === undefined) {
-    //   stream$ = this.userService.getCurrentUserProfile();
-    // } else {
-    // }
     stream$ = of(this.userService.currentUser);
 
     return stream$.pipe(
@@ -26,7 +22,7 @@ export class AuthGuard implements CanActivateChild {
       }),
       tap((canContinue) => {
         if (canContinue) { return; }
-        this.router.navigate(['/login']);
+        this.router.navigate(['user/login']);
         return true;
       })
     );

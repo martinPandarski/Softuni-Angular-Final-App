@@ -8,6 +8,7 @@ import { storageServiceProvider } from './storage.service';
 
 
 
+
 @NgModule({
   declarations: [],
   imports: [
@@ -18,7 +19,7 @@ import { storageServiceProvider } from './storage.service';
   ],
   providers:[AuthGuard, storageServiceProvider],
   exports:[
-    AuthGuard
+    
   ]
 })
 export class CoreModule { }

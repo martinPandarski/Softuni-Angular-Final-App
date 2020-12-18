@@ -5,12 +5,10 @@ import { MaterialModule } from '../material.module';
 import { DashboardService } from './dashboard.service';
 import { NewPlanComponent } from './new-plan/new-plan.component';
 import { RouterModule } from '@angular/router';
-import { MatFormField } from '@angular/material/form-field';
+
 import { FormsModule } from '@angular/forms';
-import { MatDialog } from '@angular/material/dialog';
 import { DashboardRouterModule } from './dashboard-routing.module';
 import { DetailsPlansComponent } from './details-plans/details-plans.component';
-import {MatRadioButton} from '@angular/material/radio'
 
 
 
@@ -25,7 +23,8 @@ import {MatRadioButton} from '@angular/material/radio'
     
   ],
   providers: [DashboardService],
-  entryComponents: [NewPlanComponent]
+  exports:[DashboardComponent, DetailsPlansComponent]
+  //entryComponents: [NewPlanComponent]
 
 })
 export class DashboardModule { }

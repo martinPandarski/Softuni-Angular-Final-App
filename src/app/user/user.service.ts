@@ -18,12 +18,6 @@ export class UserService {
 
   constructor(private http: HttpClient) { }
 
-  // getCurrentUserProfile(): Observable<any> {
-  //   return this.http.get(`${apiUrl}/users/${this.currentUser.ownerId}`).pipe(
-  //     tap(((user: IUser) => this.currentUser = user)),
-  //     catchError(() => { this.currentUser = null; return of(null); })
-  //   );
-  // }
   
   login(data: any): Observable<any> {
     return this.http.post(`${apiUrl}/users/login`, data).pipe(
@@ -35,7 +29,6 @@ export class UserService {
     return this.http.post(`${apiUrl}/users/register`, data).pipe(
       tap((user: IUser) => this.currentUser = user)
     );
-    
   }
 
   logout(): Observable<any> {

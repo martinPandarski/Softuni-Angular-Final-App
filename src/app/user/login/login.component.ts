@@ -2,7 +2,7 @@ import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { UserService } from '../user.service';
-import { MatSnackBar } from '@angular/material/snack-bar'
+
 
 @Injectable()
 @Component({
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
-  errorMessage = '';
+
 
   constructor(
     private formBuilder: FormBuilder,
@@ -32,7 +32,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  submit(formValue: { email: string, password: string }): void {
+  submit(formValue: { login: string, password: string }): void {
     this.userService.login(formValue).subscribe({
       next: (data) => {
         this.router.navigate(['/']);

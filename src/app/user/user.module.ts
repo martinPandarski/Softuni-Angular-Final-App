@@ -5,7 +5,7 @@ import { RegisterComponent } from './register/register.component';
 import { ProfileComponent } from './profile/profile.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MaterialModule } from '../material.module';
-import { AppModule } from '../app.module';
+
 import { UserService } from './user.service';
 import { UserRoutingModule } from './user-routing.module';
 

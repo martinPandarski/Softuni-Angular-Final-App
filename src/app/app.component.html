@@ -42,19 +42,19 @@
      <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
         <ul fxLayout fxLayoutGap="20px" class="navigation-items">
             <li>
-                <a *ngIf="!isLogged" routerLink="/login">
+                <a *ngIf="!isLogged" routerLink="user/login">
                   <mat-icon class="icon">input</mat-icon>
                   <span  class="label">Login</span>
                  </a>
             </li>
             <li>
-              <a *ngIf="!isLogged" routerLink="/register">
+              <a *ngIf="!isLogged" routerLink="user/register">
                 <mat-icon class="icon">assignment_ind</mat-icon>
                 <span class="label">Register</span>
               </a>
             </li>
               <li>
-                <a *ngIf="isLogged" routerLink="/profile">
+                <a *ngIf="isLogged" routerLink="user/profile">
                   <mat-icon class="icon">perm_identity</mat-icon>
                   <span class="label">Profile</span>
                 </a>
