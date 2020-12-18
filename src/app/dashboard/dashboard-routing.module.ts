@@ -8,36 +8,31 @@ import { AuthGuard } from '../core/guards/auth.guard';
 const routes: Routes = [
   {
     path: 'dashboard',
-    canActivateChild: [AuthGuard],
-    children: [
-      {
-        path: '',
-        pathMatch: 'full',
-        component: DashboardComponent,
-        data: {
-          title: 'Dashboard'
-        }
-      },
-      {
-        path: 'new',
-        component: NewPlanComponent,
-        data: {
-          title: 'New Plan',
-          isLogged: true
-        },
-      },
-      {
-        path: 'details',
-        component: DetailsPlansComponent,
-        data: {
-          title: 'Details',
-          isLogged: true
-        }
-      }
-    ]
+    component: DashboardComponent,
+    data: {
+      title: 'Dashboard'
+    }
+  },
+  {
+    path: 'new',
+    component: NewPlanComponent,
+    data: {
+      title: 'New Plan',
+      isLogged: true
+    },
+  },
+  {
+    path: 'details',
+    component: DetailsPlansComponent,
+    data: {
+      title: 'Details',
+      isLogged: true
+    }
   }
-  
-  
+
+
+
+
 ];
 
 export const DashboardRouterModule = RouterModule.forChild(routes);
