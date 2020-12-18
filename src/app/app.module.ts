@@ -17,6 +17,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { CoreModule } from './core/core.module';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -32,7 +33,8 @@ import { CoreModule } from './core/core.module';
     FlexLayoutModule,
     MaterialModule,
     UserModule,
-    DashboardModule
+    DashboardModule,
+    
    
     
     // SharedModule

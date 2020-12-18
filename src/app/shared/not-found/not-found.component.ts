@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {UserService} from '../../../user/user.service'
+
 
 
 @Component({
@@ -7,11 +7,10 @@ import {UserService} from '../../../user/user.service'
   templateUrl: './not-found.component.html',
   styleUrls: ['./not-found.component.css']
 })
-export class NotFoundComponent implements OnInit {
+export class NotFoundComponent {
 
-  constructor(userService: UserService) { }
+  constructor() { }
 
-  ngOnInit(): void {
-  }
+  
 
 }
