@@ -1,8 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Injectable } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { UserService } from '../user.service';
+import { MatSnackBar } from '@angular/material/snack-bar'
 
+@Injectable()
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -12,13 +14,17 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
   emailRegx = /^(([^<>+()\[\]\\.,;:\s@"-#$%&=]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,3}))$/;
+  errorMessage = '';
 
   constructor(
     private formBuilder: FormBuilder,
     private userService: UserService,
-    private router: Router
-  ) { }
+    private router: Router,
+    
 
+  ) { }
+    
+  
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
       login: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
@@ -27,18 +33,12 @@ export class LoginComponent implements OnInit {
   }
 
   submit(formValue: { email: string, password: string }): void {
-    // this.isLoading = true;
-    // this.errorMessage = '';
-
     this.userService.login(formValue).subscribe({
       next: (data) => {
-        // this.isLoading = false;
-        console.log(this.userService.currentUser.ownerId)
         this.router.navigate(['/']);
       },
       error: (err) => {
-        // this.errorMessage = 'ERROR!';
-        // this.isLoading = false;
+        alert(err.error.message);
       }
     });
   }

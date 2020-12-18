@@ -19,8 +19,11 @@
           </mat-error>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" type="submit">Log In</button>
-      
+        <p *ngIf="errorMessage" class="error">
+          {{errorMessage}}
+        </p>
+        <button [disabled]="loginForm.invalid" mat-raised-button color="primary" type="submit">Log In</button>
+        
       </form>
     </div>
   </div>

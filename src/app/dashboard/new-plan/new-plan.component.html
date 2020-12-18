@@ -37,8 +37,8 @@
       </mat-form-field></td>
     </tr></table>
   
-    <button mat-raised-button color="primary">Submit</button>
-    
+    <button [disabled]="f.invalid" mat-raised-button color="primary">Submit</button>
+    <br>
     <button mat-raised-button color="primary" routerLink="/dashboard">Cancel</button>
 
   </form>

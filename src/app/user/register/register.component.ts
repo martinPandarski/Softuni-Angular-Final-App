@@ -3,6 +3,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router'
 import { UserService } from '../user.service';
 
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -20,9 +21,10 @@ export class RegisterComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    
     this.registerForm = this.formBuilder.group({
       email: [null, [Validators.required, Validators.pattern(this.emailRegx)]],
-      password: [null, Validators.required],
+      password: [null, [Validators.required]],
       username: [null, Validators.required],
       rePassword: [null, Validators.required]
     });
@@ -30,17 +32,11 @@ export class RegisterComponent implements OnInit {
 
   submitHandler(registerForm): void {
     const data = this.registerForm.value;
-    // this.isLoading = true;
-
-
     this.userService.register(data).subscribe({
       next: () => {
-        // this.isLoading = false;
-        
         this.router.navigate(['/']);
       },
       error: (err) => {
-        //this.isLoading = false;
         console.error(err);
       }
     });

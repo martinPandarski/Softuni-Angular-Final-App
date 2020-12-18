@@ -22,7 +22,7 @@
         <mat-form-field class="form-field" appearance="outline">
           <mat-label> Password
           </mat-label>
-          <input matInput formControlName="password" type="password" required>
+          <input matInput formControlName="password" type="password" required #password>
           <mat-error *ngIf="registerForm.controls.password.touched && registerForm.controls.password.invalid">
             <span *ngIf="registerForm.controls.password.errors.required">This field is mandatory.</span>
           </mat-error>
@@ -30,13 +30,13 @@
         <mat-form-field class="form-field" appearance="outline">
           <mat-label> Repeat Password
           </mat-label>
-          <input matInput formControlName="rePassword" type="password" required>
+          <input matInput formControlName="rePassword" type="password" required pattern="{{password.value}}">
           <mat-error *ngIf="registerForm.controls.rePassword.touched && registerForm.controls.rePassword.invalid">
             <span *ngIf="registerForm.controls.rePassword.errors.required">This field is mandatory.</span>
           </mat-error>
         </mat-form-field>
         <br>
-        <button mat-raised-button color="primary" type="submit">Register</button>
+        <button [disabled]="registerForm.invalid" mat-raised-button color="primary" type="submit">Register</button>
       </form>
     </div>
   </div>
